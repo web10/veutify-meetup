@@ -19,7 +19,8 @@
       <v-toolbar-title>Meetup Now!</v-toolbar-title>
       <v-spacer></v-spacer>
       <v-toolbar-items class="hidden-md-and-down">
-        <v-btn flat  v-for="item in menuItems" :key="item.title">
+        <!-- :to attribute added , now all link active -->
+        <v-btn flat  v-for="item in menuItems" :key="item.title" :to="{name:item.name}">
           <v-icon left> {{item.icon }}</v-icon>
           {{ item.title }}
         </v-btn>
@@ -28,8 +29,8 @@
     </v-toolbar>
 
 
-    <main>
-      <router-view></router-view>
+    <main class="mt-5">
+      <router-view class="mt-5"></router-view>
     </main>
     <v-spacer></v-spacer>
     <v-footer app class="pa-3, purple" dark>
@@ -40,17 +41,18 @@
 
 <script>
 export default {
-  data () {
+  data() {
     return {
       sideNav: false,
+      // Add url or name . I added chose name
       menuItems: [
-        {icon: 'supervisor_account', title: 'View Meetups'},
-        {icon: 'room', title: 'Organize Meetup'},
-        {icon: 'person', title: 'Profile'},
-        {icon: 'face', title: 'Sign up'},
-        {icon: 'lock_open', title: 'Sign in'}
+        { icon: "supervisor_account", title: "View Meetups", name: "Meetups" },
+        { icon: "room", title: "Organize Meetup", name: "CreateMeetup" },
+        { icon: "person", title: "Profile", name: "Profile" },
+        { icon: "face", title: "Sign up", name: "Signup" },
+        { icon: "lock_open", title: "Sign in", name: "Signin" }
       ]
-    }
+    };
   }
-}
+};
 </script>
