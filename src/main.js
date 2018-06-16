@@ -13,7 +13,9 @@ import {
   VIcon,
   VGrid,
   VToolbar,
-  transitions
+  VCarousel,//If you are using any vuetify compnent then must include or indivial file or in main.js . You didn't include this file
+  transitions,
+  
 } from 'vuetify'
 import '../node_modules/vuetify/src/stylus/app.styl'
 
@@ -27,6 +29,7 @@ Vue.use(Vuetify, {
     VIcon,
     VGrid,
     VToolbar,
+    VCarousel,//Need to register the Vuetify component after inhject
     transitions
   }
 })
