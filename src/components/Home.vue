@@ -21,18 +21,19 @@
       </v-flex>
     </v-layout>
   </v-container>
-</template
+</template>
 
 <script>
   export default {
     data () {
       return {
+        // Img Path is not correct
         meetups: [
-          { imageUrl: 'https://commons.wikimedia.org/wiki/File:Paris_-_Eiffelturm_und_Marsfeld2.jpg',
+          { imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/6/6e/Paris_-_Eiffelturm_und_Marsfeld2.jpg',
             id: 'adfadf',
             title: 'Paris'
           },
-          { imageUrl: 'https://en.wikipedia.org/wiki/File:Tower_Bridge_London_Feb_2006.jpg',
+          { imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/4/44/Tower_Bridge_London_Feb_2006.jpg',
             id: 'dfg',
             title: 'London'
           },
@@ -46,7 +47,7 @@
   }
 </script>
 
-<style scoped>
+<style>
   .title {
     position: absolute;
     bottom: 50px;
@@ -54,5 +55,9 @@
     color: white;
     font-size: 2em;
     padding: 20 px;
+  }
+  /* Img size to big , so using width attr to fit in box */
+  .jumbotron__image{
+    width: 100%;
   }
 </style>
